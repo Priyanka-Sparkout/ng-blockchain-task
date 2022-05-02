@@ -1,0 +1,13 @@
+<!-- <button *ngIf="walletAddress" class="bg-violet-500 px-6 py-2 rounded m-20 text-white capitalize font-sans" (click)="onConnectWallet()" >
+    connect wallet 
+  </button> -->
+
+  <div *ngIf="walletAddress;then ifContent else elseContent"></div>
+            
+  <ng-template #ifContent>
+        <button class="bg-violet-500 px-6 py-2 rounded m-20 text-white capitalize font-sans" type="button">Metamask connected {{walletAddress}}</button>
+    </ng-template>
+
+    <ng-template #elseContent>
+        <button class="bg-violet-500 px-6 py-2 rounded m-20 text-white capitalize font-sans" (click)="onConnectWallet()" type="button">Connect</button>
+    </ng-template>
